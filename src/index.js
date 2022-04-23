@@ -11,7 +11,7 @@ window.onload = () => {
 };
 
 function onStartButtonClicked(event) {
-  // Removes the start button fromt he DOM, because it is going to be replaced by the audio control.
+  // Removes the start button from the DOM, because it is going to be replaced by the audio control.
   event.target.remove();
  
   // Gets a reference to the audio element.

@@ -27,6 +27,7 @@ export default class Visualizer {
    *     @param {String} containerSelector - selector for visualizer DOM hook.
    *     @param {HTMLAudioElement} audioSource - the audio to be used by visualizer.
    *  optional:
+   *     style,
    *     volume, 
    *     loopAudio,
    *     numberOfBars,   // Not yet implemented.
