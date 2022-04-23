@@ -1,0 +1,54 @@
+/************* STYLE 2D **************/
+
+.style-2d.visualizer {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  border: 1px solid #dee2e6;
+  border-color: #212529;
+  border-radius: 0.25rem;
+}
+
+.style-2d.visualizer .visualizer__bar {
+  border: solid 1px black;
+  width: 10px;
+  height: 400px;
+}
+
+
+/************* STYLE 3D **************/
+
+.style-3d.visualizer {
+  width: 62px;
+  height: 455px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.style-3d.visualizer .visualizer__cilinder {
+  display: flex;
+  align-items: end;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.style-3d.visualizer .visualizer__bar {
+  position: absolute;
+  width: 7px;
+  background: linear-gradient(#c90303, #0bb905);
+}
+
+.rotate {
+  animation: rotation 100s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(359deg);
+  }
+}
