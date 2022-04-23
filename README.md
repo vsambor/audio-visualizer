@@ -1,4 +1,6 @@
-# JavaScript Audio Visualizer
+# Audio Visualizer
+
+Audio Visualizer in vanilla JavaScript.
 
 ## Project setup
 ```
