@@ -1,4 +1,4 @@
-# challenge
+# JavaScript Audio Visualizer
 
 ## Project setup
 ```
