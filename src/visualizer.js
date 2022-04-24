@@ -6,17 +6,12 @@
  * Also can use different visualizer styles by preference.  
  ***/
 
-import {
-  VISUALIZER_STYLE_2D,
-  VISUALIZER_STYLE_3D,
-} from '../src/constants';
-
-
 const NUMBER_OF_BARS = 40;
 const BAR_UPDATE_FREQUENCY = 25; // In miliseconds => 0.025 seconds => 40Hz.
 const DEFAULT_VOLUME = 0.5;
 
-
+export const VISUALIZER_STYLE_2D = 'style-2d';
+export const VISUALIZER_STYLE_3D = 'style-3d';
 export default class Visualizer {
 
   /**
@@ -25,7 +20,7 @@ export default class Visualizer {
    * @param {Object} options - visualizer customization required and optional parameters:
    *  required:
    *     @param {String} containerSelector - selector for visualizer DOM hook.
-   *     @param {HTMLAudioElement} audioSource - the audio to be used by visualizer.
+   *     @param {HTMLAudioElement} audioElement - the audio to be used by visualizer.
    *  optional:
    *     style,
    *     volume, 
@@ -38,7 +33,7 @@ export default class Visualizer {
 
     this._options = options;
     this._container = document.querySelector(this._options.containerSelector);
-    this._audio = this._options.audioSource;
+    this._audio = this._options.audioElement;
 
     this._useStyle();
     this._createAudioPipeline();
@@ -70,7 +65,7 @@ export default class Visualizer {
   _checkParameters(options) {
     const requiredList = [
       "containerSelector",
-      "audioSource",
+      "audioElement",
     ];
 
     for (const req of requiredList) {
@@ -199,8 +194,8 @@ export default class Visualizer {
   /**
    * Calculates the div bar height based on current frequency.
    * 
-   * @param {*} freq - current bar frequency datum.
-   * @returns {} - bar height in pixels.
+   * @param {Number} freq - current bar frequency datum.
+   * @returns {Number} - bar height in pixels.
    */
   _getBarHeightForFrequency(freq) {
     // 1.6 is arbitrary to give more gain to the frequency so that it can go up to the end of visualizer.

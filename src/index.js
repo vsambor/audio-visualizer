@@ -1,5 +1,8 @@
-import Visualizer from '../src/visualizer';
-import { VISUALIZER_STYLE_2D, VISUALIZER_STYLE_3D } from '../src/constants';
+import Visualizer, {
+  VISUALIZER_STYLE_2D,
+  VISUALIZER_STYLE_3D
+} from '../src/visualizer';
+
 
 
 window.onload = () => {
@@ -23,8 +26,8 @@ function onStartButtonClicked(event) {
   // Creates the visualizer with it's options.
   const vizualizer = new Visualizer({
     containerSelector: '.visualizer', // required
-    audioSource: audio,               // required
-    style: VISUALIZER_STYLE_3D,       // Please try VISUALIZER_STYLE_2D as well.
+    audioElement: audio,              // required
+    style: VISUALIZER_STYLE_3D,       // You can try VISUALIZER_STYLE_2D as well.
     volume: 0.8,
     loopAudio: true,
   });
