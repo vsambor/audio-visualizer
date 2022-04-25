@@ -4,7 +4,6 @@ import Visualizer, {
 } from '../src/visualizer';
 
 
-
 window.onload = () => {
   const startButton = document.getElementById("start-btn");
 
